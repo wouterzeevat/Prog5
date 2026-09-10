@@ -55,7 +55,7 @@ def main():
 
     args = parser.parse_args()
 
-    print(trapezoid(np.cos, args.a, args.b, n=args.n))
+    print(trapezoid(np.cos, float(args.a), float(args.b), n=int(args.n)))
 
 if __name__ == "__main__":
     main()
