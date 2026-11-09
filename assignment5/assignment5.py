@@ -178,6 +178,11 @@ def drop_sql_tables(spark):
 def create_sql_tables(df):
     """Creates and saves the normalized SQL tables."""
 
+    # These tables are chosen because variants and proteins are stored separately to avoid duplicate data. 
+    # The Variant table stores each unique genetic variant, while the Protein table stores each unique protein. 
+    # The VariantProtein table connects them because one variant can be associated with multiple proteins and one protein can be associated 
+    # with multiple variants.
+
     df = df.withColumnRenamed("#chr", "chr") \
         .withColumnRenamed("pos(1-based)", "pos")
 
