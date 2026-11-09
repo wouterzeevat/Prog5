@@ -111,9 +111,8 @@ def create_tables(engine):
     """Creates empty SQL tables to be filled in later"""
 
     # The tables are separated because one genome can contain many proteins. 
-    # The Genome table stores information about each genome, while the Protein table stores information 
-    # about the proteins belonging to each genome. 
-    # They are connected using the accession number. This way, we don't have to store the same genome information for every protein.
+    # The Genome table stores information about each genome and the Protein table stores information 
+    # about the proteins belonging to each genome They are linked with accession number.
 
     with engine.begin() as connection:
 
